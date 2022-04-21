@@ -6,11 +6,12 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import javafx.scene.layout.VBox;
 
 
 public class UtilCSV {
     
-    public void leerContenido(){
+    public static void leerContenido(int añoSeleccionado){
     String nombreFichero = "fatalities-from-terrorism.csv";
         // Declarar una variable BufferedReader
         BufferedReader br = null;
@@ -20,15 +21,18 @@ public class UtilCSV {
             br = new BufferedReader(new FileReader(nombreFichero));
             // Leer la primera línea, guardando en un String
             String texto = br.readLine();
+            int muertestotales = 0;
+            texto = br.readLine();
             // Repetir mientras no se llegue al final del fichero
             while(texto != null) {
                 String[] valores = texto.split(",");
-                String muertes = valores[3];
-                String año = valores[2];
-                System.out.println(año);
-                // Leer la siguiente línea
+                int muertes = Integer.valueOf(valores[3]);
+                int año = Integer.valueOf(valores[2]);
+                if( año == añoSeleccionado)
+                    muertestotales = muertestotales + muertes;
                 texto = br.readLine();
             }
+            System.out.println("Numero de muertes en el año:" + String.valueOf(muertestotales));
         }
         // Captura de excepción por fichero no encontrado
         catch (FileNotFoundException ex) {
@@ -54,7 +58,7 @@ public class UtilCSV {
             }
         }
     }
-    public void añadirContenido(){
+    public void exportarContenido(){
         String nombreFichero = "nuevo.txt";
         String texto = "Texto de prueba";
         BufferedWriter bw = null;
