@@ -11,7 +11,7 @@ public class Pantalla {
     
     public static void itemsPantalla(VBox root){
         
-        UtilCSV utilcsv = new UtilCSV();
+        
         TextField textfield = new TextField();
             textfield.setMinWidth(50);
             textfield.setMaxWidth(50);
@@ -24,8 +24,11 @@ public class Pantalla {
             int añoSeleccionado;
             añoSeleccionado = Integer.valueOf(textfield.getText());
             UtilCSV.leerContenido(añoSeleccionado);
+            textarea.setText("Numero de muertes en ese año es: " + String.valueOf(UtilCSV.muertestotales));
+            UtilCSV.borrarContenidoMuertes();
             
         });
+        
         
     }
             
