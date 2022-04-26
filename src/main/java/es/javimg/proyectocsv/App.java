@@ -20,7 +20,8 @@ public class App extends Application {
         var scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
-        pantalla.itemsPantalla(root);
+        Pantalla.itemsPantalla(root);
+        
         
     }
 

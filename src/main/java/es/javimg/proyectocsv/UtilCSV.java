@@ -63,9 +63,9 @@ public class UtilCSV {
             }
         }
     }
-    public static void exportarContenido(){
-        String nombreFichero = "nuevo.txt";
-        String texto = "Texto de prueba";
+    public static void guardarContenido(){
+        String nombreFichero = "Numero de muertes.csv";
+        String texto = Pantalla.textoGuardar;
         BufferedWriter bw = null;
         
         try {
@@ -91,7 +91,7 @@ public class UtilCSV {
                 System.out.println("Error al cerrar el fichero");
                 ex.printStackTrace();
             }
-        }
+        } 
     }
     public static void borrarContenidoMuertes(){
         muertestotales = 0;
