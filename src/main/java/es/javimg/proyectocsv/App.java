@@ -1,8 +1,6 @@
 package es.javimg.proyectocsv;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -20,7 +18,7 @@ public class App extends Application {
         var scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
-        Pantalla.itemsPantalla(root);
+        Pantalla.itemsPantalla(root);//llamada al metodo itemspantalla, solo se llama a este por que en el llamamos a los demas metodos necesarios
         
         
     }

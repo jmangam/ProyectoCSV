@@ -6,14 +6,13 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import javafx.scene.layout.VBox;
 
 
 public class UtilCSV {
     
     static int muertestotales = 0;
     
-    public static void leerContenido(int añoSeleccionado){
+    public static void leerContenido(int añoSeleccionado){// metodo que se encarga de leer el archivo csv
     String nombreFichero = "fatalities-from-terrorism.csv";
         // Declarar una variable BufferedReader
         BufferedReader br = null;
@@ -63,7 +62,7 @@ public class UtilCSV {
             }
         }
     }
-    public static void guardarContenido(){
+    public static void guardarContenido(){ // fichero que guarda el resultado del textarea a un fichero csv
         String nombreFichero = "Numero de muertes.csv";
         String texto = Pantalla.textoGuardar;
         BufferedWriter bw = null;
@@ -93,7 +92,7 @@ public class UtilCSV {
             }
         } 
     }
-    public static void borrarContenidoMuertes(){
+    public static void borrarContenidoMuertes(){ //metodo que borra la variable contenidomuertes
         muertestotales = 0;
     }
 }

@@ -21,7 +21,7 @@ public class Pantalla {
         Button buttonvisualizar = new Button("Visualizar");
             textarea.setMaxWidth(300);
             textarea.setMinWidth(300);
-        root.getChildren().addAll(label, textfield, buttonvisualizar, textarea);
+        root.getChildren().addAll(label, textfield, buttonvisualizar, textarea); //añade por pantalla los elementos creados anteriormente
         buttonvisualizar.setOnAction((t) -> {
             int añoSeleccionado;
             añoSeleccionado = Integer.valueOf(textfield.getText());
